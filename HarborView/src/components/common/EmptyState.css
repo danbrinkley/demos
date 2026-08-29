@@ -1,0 +1,31 @@
+.hv-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--hv-space-1);
+  padding: var(--hv-space-5) var(--hv-space-4);
+  color: var(--hv-text-secondary);
+}
+
+.hv-empty-state__icon {
+  display: inline-flex;
+  color: var(--hv-teal-dark);
+  margin-bottom: var(--hv-space-1);
+}
+
+.hv-empty-state__icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.hv-empty-state__title {
+  font-weight: 600;
+  color: var(--hv-text-primary);
+  font-size: var(--hv-text-base);
+}
+
+.hv-empty-state__description {
+  font-size: var(--hv-text-sm);
+  color: var(--hv-text-muted);
+  max-width: 40ch;
+}

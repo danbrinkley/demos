@@ -1,0 +1,35 @@
+.hv-user-menu__trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--hv-space-1);
+  height: 2.75rem;
+  padding-inline: var(--hv-space-2);
+  border: 1px solid transparent;
+  border-radius: var(--hv-radius-md);
+  background: transparent;
+  cursor: pointer;
+  transition: background-color var(--hv-duration-fast) var(--hv-ease-spring);
+}
+
+.hv-user-menu__trigger:hover {
+  background: var(--hv-bg-sunken);
+}
+
+.hv-user-menu__avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background: var(--hv-navy);
+  color: var(--hv-text-on-navy);
+  font-weight: 600;
+  font-size: var(--hv-text-sm);
+}
+
+.hv-user-menu__chevron {
+  width: 16px;
+  height: 16px;
+  color: var(--hv-text-muted);
+}

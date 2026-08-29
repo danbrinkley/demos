@@ -1,0 +1,26 @@
+.hv-greeting {
+  display: flex;
+  flex-direction: column;
+  gap: var(--hv-space-1);
+  margin-bottom: var(--hv-space-6);
+}
+
+.hv-greeting__heading {
+  font-family: var(--hv-font-display);
+  font-weight: 600;
+  font-style: italic;
+  font-size: var(--hv-text-display);
+  letter-spacing: var(--hv-tracking-tight);
+  color: var(--hv-navy);
+}
+
+.hv-greeting__date {
+  font-size: var(--hv-text-base);
+  color: var(--hv-text-secondary);
+}
+
+@media (max-width: 480px) {
+  .hv-greeting__heading {
+    font-size: 1.625rem;
+  }
+}

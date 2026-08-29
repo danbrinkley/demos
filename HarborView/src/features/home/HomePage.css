@@ -1,0 +1,21 @@
+.hv-home {
+  display: flex;
+  flex-direction: column;
+}
+
+.hv-home > .hv-org-alert {
+  margin-bottom: var(--hv-space-6);
+}
+
+.hv-home__secondary-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--hv-space-4);
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .hv-home__secondary-row {
+    grid-template-columns: 1fr;
+  }
+}

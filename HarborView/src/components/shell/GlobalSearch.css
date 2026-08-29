@@ -1,0 +1,174 @@
+.hv-search {
+  position: relative;
+  width: 100%;
+  max-width: 22rem;
+}
+
+.hv-search__field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 2.75rem;
+}
+
+.hv-search__icon {
+  position: absolute;
+  top: 50%;
+  left: var(--hv-space-3);
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  color: var(--hv-text-muted);
+  pointer-events: none;
+}
+
+.hv-search__input {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--hv-radius-pill);
+  border: 1px solid var(--hv-border);
+  background: var(--hv-bg-surface);
+  padding-inline: var(--hv-space-7) 2.75rem;
+  font-size: var(--hv-text-sm);
+  color: var(--hv-text-primary);
+  transition: border-color var(--hv-duration-fast) var(--hv-ease-spring),
+    box-shadow var(--hv-duration-fast) var(--hv-ease-spring);
+}
+
+.hv-search__input::placeholder {
+  color: var(--hv-text-muted);
+}
+
+.hv-search__input:hover {
+  border-color: var(--hv-border-strong);
+}
+
+.hv-search__input:focus-visible {
+  outline: none;
+  border-color: var(--hv-teal);
+  box-shadow: var(--hv-shadow-focus);
+}
+
+/* Suppress native search-input decorations so our own clear button is the only one. */
+.hv-search__input::-webkit-search-cancel-button {
+  display: none;
+}
+
+/* Sized to the full 44px input height/width for its clickable area; the
+   icon inside stays visually small (see svg rule below). */
+.hv-search__clear {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 100%;
+  border-radius: 0 var(--hv-radius-pill) var(--hv-radius-pill) 0;
+  border: none;
+  background: transparent;
+  color: var(--hv-text-muted);
+  cursor: pointer;
+}
+
+.hv-search__clear svg {
+  width: 14px;
+  height: 14px;
+}
+
+.hv-search__clear:hover {
+  background: var(--hv-bg-sunken);
+  color: var(--hv-text-primary);
+}
+
+.hv-search__panel {
+  position: absolute;
+  top: calc(100% + var(--hv-space-2));
+  left: 0;
+  right: 0;
+  background: var(--hv-bg-surface-raised);
+  border: 1px solid var(--hv-border);
+  border-radius: var(--hv-radius-md);
+  box-shadow: var(--hv-shadow-raised);
+  z-index: 30;
+  overflow: hidden;
+}
+
+.hv-search__results {
+  display: flex;
+  flex-direction: column;
+  padding: var(--hv-space-1);
+  max-height: 20rem;
+  overflow-y: auto;
+}
+
+.hv-search__result {
+  display: flex;
+  align-items: center;
+  gap: var(--hv-space-3);
+  width: 100%;
+  min-height: 2.75rem;
+  padding: var(--hv-space-2) var(--hv-space-3);
+  border: none;
+  background: transparent;
+  border-radius: var(--hv-radius-sm);
+  text-align: left;
+  cursor: pointer;
+  color: var(--hv-text-primary);
+}
+
+.hv-search__result:hover {
+  background: var(--hv-bg-sunken);
+}
+
+.hv-search__result-icon {
+  width: 16px;
+  height: 16px;
+  color: var(--hv-teal-dark);
+  flex-shrink: 0;
+}
+
+.hv-search__result-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+}
+
+.hv-search__result-label {
+  font-size: var(--hv-text-sm);
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hv-search__result-meta {
+  font-size: var(--hv-text-xs);
+  color: var(--hv-text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hv-search__result-type {
+  flex-shrink: 0;
+  font-size: var(--hv-text-xs);
+  color: var(--hv-text-muted);
+  background: var(--hv-bg-sunken);
+  padding: 0.15rem var(--hv-space-2);
+  border-radius: var(--hv-radius-pill);
+}
+
+.hv-search__placeholder-message {
+  padding: var(--hv-space-4);
+  font-size: var(--hv-text-sm);
+  color: var(--hv-text-secondary);
+}
+
+@media (max-width: 767px) {
+  .hv-search {
+    max-width: none;
+  }
+}

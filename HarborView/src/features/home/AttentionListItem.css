@@ -1,0 +1,68 @@
+.hv-attention-item {
+  border-bottom: 1px solid var(--hv-border);
+}
+
+.hv-attention-item:last-child {
+  border-bottom: none;
+}
+
+/* Receives programmatic focus when opened from search. */
+.hv-attention-item:focus {
+  outline: 2px solid var(--hv-focus-ring);
+  outline-offset: 2px;
+  border-radius: var(--hv-radius-sm);
+}
+
+.hv-attention-item__row {
+  width: 100%;
+  min-height: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--hv-space-3);
+  padding: var(--hv-space-3) var(--hv-space-1);
+  background: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  border-radius: var(--hv-radius-sm);
+}
+
+.hv-attention-item__row:hover {
+  background: var(--hv-bg-sunken);
+}
+
+.hv-attention-item__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--hv-space-1);
+  min-width: 0;
+}
+
+.hv-attention-item__title {
+  font-size: var(--hv-text-sm);
+  font-weight: 600;
+  color: var(--hv-text-primary);
+}
+
+.hv-attention-item__chevron {
+  width: 16px;
+  height: 16px;
+  color: var(--hv-text-muted);
+  flex-shrink: 0;
+  transition: transform var(--hv-duration-base) var(--hv-ease-spring);
+}
+
+.hv-attention-item__row[aria-expanded='true'] .hv-attention-item__chevron {
+  transform: rotate(180deg);
+}
+
+.hv-attention-item__panel-wrap {
+  padding: 0 var(--hv-space-1) var(--hv-space-3);
+}
+
+.hv-attention-item__panel-wrap .hv-detail-panel {
+  margin-top: 0;
+  border-top: none;
+  padding-top: 0;
+}

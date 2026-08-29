@@ -1,0 +1,22 @@
+.hv-org-alert {
+  display: flex;
+  align-items: center;
+  gap: var(--hv-space-3);
+  background: var(--hv-sandbar-soft);
+  border: 1px solid var(--hv-sandbar);
+  border-radius: var(--hv-radius-md);
+  padding: var(--hv-space-3) var(--hv-space-4);
+}
+
+.hv-org-alert__icon {
+  width: 18px;
+  height: 18px;
+  color: var(--hv-coral-dark);
+  flex-shrink: 0;
+}
+
+.hv-org-alert__message {
+  font-size: var(--hv-text-sm);
+  font-weight: 500;
+  color: var(--hv-navy);
+}

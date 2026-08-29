@@ -1,0 +1,48 @@
+.hv-commitment-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--hv-space-3);
+  padding: var(--hv-space-3) var(--hv-space-1);
+  border-bottom: 1px solid var(--hv-border);
+}
+
+.hv-commitment-item:last-child {
+  border-bottom: none;
+}
+
+.hv-commitment-item__day {
+  flex-shrink: 0;
+  width: 4.5rem;
+  font-size: var(--hv-text-xs);
+  font-weight: 600;
+  color: var(--hv-teal-dark);
+  text-transform: uppercase;
+  letter-spacing: var(--hv-tracking-wide);
+  padding-top: 0.2rem;
+}
+
+.hv-commitment-item__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--hv-space-1);
+  min-width: 0;
+}
+
+.hv-commitment-item__label {
+  font-size: var(--hv-text-sm);
+  font-weight: 600;
+  color: var(--hv-text-primary);
+}
+
+.hv-commitment-item__source {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--hv-space-1);
+  font-size: var(--hv-text-xs);
+  color: var(--hv-text-muted);
+}
+
+.hv-commitment-item__source-icon {
+  width: 13px;
+  height: 13px;
+}

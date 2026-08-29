@@ -1,0 +1,19 @@
+/* Shared primitives across the Home sections. */
+
+.hv-section-heading {
+  font-size: var(--hv-text-md);
+  font-weight: 600;
+  color: var(--hv-navy);
+  letter-spacing: var(--hv-tracking-tight);
+  margin-bottom: var(--hv-space-4);
+}
+
+.hv-section-heading--secondary {
+  font-size: var(--hv-text-sm);
+  text-transform: uppercase;
+  letter-spacing: var(--hv-tracking-wide);
+  color: var(--hv-text-secondary);
+  padding-bottom: var(--hv-space-3);
+  margin-bottom: var(--hv-space-1);
+  border-bottom: 1px solid var(--hv-border);
+}

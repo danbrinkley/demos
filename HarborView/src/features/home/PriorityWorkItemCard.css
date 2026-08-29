@@ -1,0 +1,142 @@
+.hv-priority-card {
+  background: var(--hv-bg-surface-raised);
+  border: 1px solid var(--hv-border);
+  border-radius: var(--hv-radius-lg);
+  box-shadow: var(--hv-shadow-card);
+  padding: var(--hv-space-6);
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow var(--hv-duration-base) var(--hv-ease-spring);
+}
+
+.hv-priority-card--completed {
+  background: var(--hv-bg-surface);
+}
+
+/* Receives programmatic focus when opened from search — visible even
+   though the card itself isn't a natural interactive element. */
+.hv-priority-card:focus {
+  outline: 2px solid var(--hv-focus-ring);
+  outline-offset: 2px;
+}
+
+.hv-priority-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--hv-space-4);
+  margin-bottom: var(--hv-space-2);
+}
+
+.hv-priority-card__heading-group {
+  min-width: 0;
+}
+
+/* Keep the status phrase on one line at desktop/tablet widths — it should
+   only wrap at genuinely narrow widths (see the 480px stack below). */
+.hv-priority-card__top .hv-status {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.hv-priority-card__source {
+  font-size: var(--hv-text-xs);
+  color: var(--hv-text-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--hv-tracking-wide);
+  margin-bottom: var(--hv-space-1);
+}
+
+.hv-priority-card__title {
+  font-size: var(--hv-text-lg);
+  font-weight: 600;
+  color: var(--hv-navy);
+  letter-spacing: var(--hv-tracking-tight);
+}
+
+.hv-priority-card__summary {
+  font-size: var(--hv-text-base);
+  color: var(--hv-text-secondary);
+  line-height: var(--hv-leading-normal);
+  max-width: 52ch;
+}
+
+.hv-priority-card__due {
+  margin-top: var(--hv-space-1);
+  font-size: var(--hv-text-sm);
+  color: var(--hv-text-muted);
+}
+
+.hv-priority-card__toggle {
+  align-self: flex-start;
+  margin-top: var(--hv-space-5);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--hv-space-2);
+  min-height: 2.75rem;
+  min-width: 2.75rem;
+  padding-inline: var(--hv-space-4);
+  border-radius: var(--hv-radius-md);
+  font-weight: 600;
+  font-size: var(--hv-text-sm);
+  cursor: pointer;
+  transition: background-color var(--hv-duration-fast) var(--hv-ease-spring),
+    border-color var(--hv-duration-fast) var(--hv-ease-spring),
+    color var(--hv-duration-fast) var(--hv-ease-spring);
+}
+
+.hv-priority-card__toggle:active {
+  transform: scale(0.98);
+}
+
+/* Primary emphasis: the clearest next action on the screen (the first
+   "What needs you" item) — a restrained filled Harbor Navy button. */
+.hv-priority-card__toggle--primary {
+  border: 1px solid var(--hv-navy);
+  background: var(--hv-navy);
+  color: var(--hv-text-on-navy);
+}
+
+.hv-priority-card__toggle--primary:hover {
+  background: var(--hv-navy-soft);
+  border-color: var(--hv-navy-soft);
+}
+
+/* Secondary emphasis: still a real action, deliberately quieter — outlined,
+   not filled, so it doesn't compete with the primary button. */
+.hv-priority-card__toggle--secondary {
+  border: 1px solid var(--hv-navy);
+  background: transparent;
+  color: var(--hv-navy);
+}
+
+.hv-priority-card__toggle--secondary:hover {
+  background: var(--hv-bg-sunken);
+}
+
+.hv-priority-card__arrow {
+  width: 16px;
+  height: 16px;
+  transition: transform var(--hv-duration-fast) var(--hv-ease-spring);
+}
+
+.hv-priority-card__toggle:hover .hv-priority-card__arrow {
+  transform: translateX(2px);
+}
+
+@media (max-width: 480px) {
+  .hv-priority-card {
+    padding: var(--hv-space-5);
+  }
+
+  .hv-priority-card__top {
+    flex-direction: column;
+    gap: var(--hv-space-2);
+  }
+
+  /* At genuinely narrow widths the status phrase may wrap naturally. */
+  .hv-priority-card__top .hv-status {
+    white-space: normal;
+  }
+}

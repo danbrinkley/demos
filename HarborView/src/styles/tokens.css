@@ -1,0 +1,115 @@
+/*
+  Harbor View design tokens.
+  Brand values come from the Harbor Community Services palette (build brief §6).
+  Semantic status tokens are kept deliberately separate from brand tokens so
+  meaning (risk / attention / done) is never confused with identity.
+*/
+
+:root {
+  /* ---- Brand ---- */
+  --hv-navy: #1c3a4b;
+  --hv-navy-soft: #2f4f62;
+  --hv-teal: #4b8b8c;
+  --hv-teal-dark: #3a6f70;
+  --hv-sandbar: #e8dcc8;
+  --hv-sandbar-soft: #f1e9dc;
+  --hv-coral: #d97b5c;
+  --hv-coral-dark: #bd6144;
+  /* Lighter than --hv-coral, used only as the coral button's hover fill —
+     going lighter (not darker) keeps dark text on it comfortably above
+     4.5:1 in both resting and hover states. */
+  --hv-coral-hover: #e3947c;
+  --hv-charcoal: #2b2b2b;
+
+  /* ---- Neutrals (warm, off-white ground) ---- */
+  --hv-bg-page: #f8f5f0;
+  --hv-bg-surface: #fffdfa;
+  --hv-bg-surface-raised: #ffffff;
+  --hv-bg-sunken: #f1ece3;
+  --hv-border: #e3dccd;
+  --hv-border-strong: #cfc6b3;
+  --hv-text-primary: var(--hv-charcoal);
+  --hv-text-secondary: #5b5650;
+  --hv-text-muted: #6e6659;
+  --hv-text-on-navy: #f6f2ea;
+  /* Dark, not light: white text on brand coral (#D97B5C) falls to ~3:1,
+     below AA. Charcoal on coral measures ~4.7:1. */
+  --hv-text-on-coral: var(--hv-charcoal);
+  --hv-link: var(--hv-teal-dark);
+  --hv-link-hover: var(--hv-navy);
+  --hv-focus-ring: #2f6f70;
+
+  /* ---- Semantic status (never reused for brand/decoration) ---- */
+  --hv-status-risk: #b3432f;
+  --hv-status-risk-bg: #f8e7e2;
+  --hv-status-risk-text: #7c2c1c;
+  --hv-status-attention: #9c6a13;
+  --hv-status-attention-bg: #f7ecd6;
+  --hv-status-attention-text: #6e4b0c;
+  --hv-status-done: #3f7d58;
+  --hv-status-done-bg: #e5f0e7;
+  --hv-status-done-text: #295b3b;
+  --hv-status-neutral: #6b6a68;
+  --hv-status-neutral-bg: #ecebe7;
+  --hv-status-neutral-text: #4a4946;
+
+  /* ---- Typography ---- */
+  --hv-font-display: 'Lora', 'Iowan Old Style', 'Palatino Linotype', serif;
+  --hv-font-body: 'Public Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
+
+  --hv-text-xs: 0.75rem;
+  --hv-text-sm: 0.8125rem;
+  --hv-text-base: 0.9375rem;
+  --hv-text-md: 1.0625rem;
+  --hv-text-lg: 1.25rem;
+  --hv-text-xl: 1.625rem;
+  --hv-text-display: 2rem;
+
+  --hv-leading-tight: 1.2;
+  --hv-leading-snug: 1.4;
+  --hv-leading-normal: 1.55;
+  --hv-leading-relaxed: 1.7;
+
+  --hv-tracking-tight: -0.02em;
+  --hv-tracking-normal: 0;
+  --hv-tracking-wide: 0.04em;
+
+  /* ---- Spacing scale ---- */
+  --hv-space-1: 0.25rem;
+  --hv-space-2: 0.5rem;
+  --hv-space-3: 0.75rem;
+  --hv-space-4: 1rem;
+  --hv-space-5: 1.5rem;
+  --hv-space-6: 2rem;
+  --hv-space-7: 2.5rem;
+  --hv-space-8: 3rem;
+  --hv-space-9: 4rem;
+
+  /* ---- Layout ---- */
+  --hv-content-max-width: 1180px;
+  --hv-page-padding-inline: clamp(1.25rem, 4vw, 3rem);
+  --hv-header-height: 4rem;
+
+  /* ---- Radii ---- */
+  --hv-radius-sm: 6px;
+  --hv-radius-md: 10px;
+  --hv-radius-lg: 14px;
+  --hv-radius-pill: 999px;
+
+  /* ---- Elevation (subtle, warm-tinted, layered) ---- */
+  --hv-shadow-card: 0 1px 2px rgba(28, 58, 75, 0.06), 0 6px 16px -4px rgba(28, 58, 75, 0.08);
+  --hv-shadow-raised: 0 2px 4px rgba(28, 58, 75, 0.08), 0 12px 24px -8px rgba(28, 58, 75, 0.12);
+  --hv-shadow-focus: 0 0 0 3px rgba(47, 111, 112, 0.35);
+
+  /* ---- Motion ---- */
+  --hv-ease-spring: cubic-bezier(0.22, 1, 0.36, 1);
+  --hv-duration-fast: 120ms;
+  --hv-duration-base: 200ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --hv-duration-fast: 0ms;
+    --hv-duration-base: 0ms;
+  }
+}

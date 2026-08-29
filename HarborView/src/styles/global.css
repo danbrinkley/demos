@@ -1,0 +1,117 @@
+@import './tokens.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  background: var(--hv-bg-page);
+  color: var(--hv-text-primary);
+  font-family: var(--hv-font-body);
+  font-size: var(--hv-text-base);
+  line-height: var(--hv-leading-normal);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-family: var(--hv-font-body);
+  color: var(--hv-navy);
+  font-weight: 600;
+}
+
+p {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  color: inherit;
+}
+
+a {
+  color: var(--hv-link);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  color: var(--hv-link-hover);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Consistent, visible focus treatment across the app.
+   Only shown for keyboard/focus-visible interaction, never on mouse click. */
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--hv-focus-ring);
+  outline-offset: 2px;
+  border-radius: var(--hv-radius-sm);
+}
+
+.hv-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.hv-skip-link {
+  position: absolute;
+  left: var(--hv-space-3);
+  top: -3rem;
+  z-index: 100;
+  background: var(--hv-navy);
+  color: var(--hv-text-on-navy);
+  padding: var(--hv-space-2) var(--hv-space-4);
+  border-radius: var(--hv-radius-sm);
+  font-weight: 600;
+  font-size: var(--hv-text-sm);
+  transition: top var(--hv-duration-base) var(--hv-ease-spring);
+}
+
+.hv-skip-link:focus-visible {
+  top: var(--hv-space-3);
+  outline: 2px solid var(--hv-text-on-navy);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,15 @@
+.hv-what-needs-you {
+  margin-bottom: var(--hv-space-8);
+}
+
+.hv-what-needs-you__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--hv-space-5);
+}
+
+@media (max-width: 900px) {
+  .hv-what-needs-you__grid {
+    grid-template-columns: 1fr;
+  }
+}

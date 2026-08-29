@@ -1,0 +1,47 @@
+.hv-status {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--hv-space-2);
+  font-size: var(--hv-text-sm);
+  font-weight: 500;
+  color: var(--hv-text-secondary);
+}
+
+.hv-status__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.hv-status--compact {
+  font-size: var(--hv-text-xs);
+}
+
+.hv-status--risk .hv-status__dot {
+  background: var(--hv-status-risk);
+}
+.hv-status--risk .hv-status__label {
+  color: var(--hv-status-risk-text);
+}
+
+.hv-status--attention .hv-status__dot {
+  background: var(--hv-status-attention);
+}
+.hv-status--attention .hv-status__label {
+  color: var(--hv-status-attention-text);
+}
+
+.hv-status--done .hv-status__dot {
+  background: var(--hv-status-done);
+}
+.hv-status--done .hv-status__label {
+  color: var(--hv-status-done-text);
+}
+
+.hv-status--neutral .hv-status__dot {
+  background: var(--hv-status-neutral);
+}
+.hv-status--neutral .hv-status__label {
+  color: var(--hv-status-neutral-text);
+}

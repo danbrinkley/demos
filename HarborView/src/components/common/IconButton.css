@@ -1,0 +1,32 @@
+.hv-icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: var(--hv-radius-md);
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--hv-navy);
+  cursor: pointer;
+  transition: background-color var(--hv-duration-fast) var(--hv-ease-spring),
+    transform var(--hv-duration-fast) var(--hv-ease-spring);
+}
+
+.hv-icon-button svg {
+  width: 20px;
+  height: 20px;
+}
+
+.hv-icon-button:hover {
+  background: var(--hv-bg-sunken);
+}
+
+.hv-icon-button:active {
+  transform: scale(0.94);
+}
+
+.hv-icon-button[aria-expanded='true'] {
+  background: var(--hv-sandbar-soft);
+  color: var(--hv-navy);
+}

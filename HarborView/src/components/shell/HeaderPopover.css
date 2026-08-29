@@ -1,0 +1,29 @@
+.hv-header-popover {
+  position: relative;
+}
+
+.hv-header-popover__panel {
+  position: absolute;
+  top: calc(100% + var(--hv-space-2));
+  right: 0;
+  width: 16rem;
+  background: var(--hv-bg-surface-raised);
+  border: 1px solid var(--hv-border);
+  border-radius: var(--hv-radius-md);
+  box-shadow: var(--hv-shadow-raised);
+  padding: var(--hv-space-4);
+  z-index: 30;
+}
+
+.hv-header-popover__title {
+  font-weight: 600;
+  color: var(--hv-navy);
+  font-size: var(--hv-text-sm);
+  margin-bottom: var(--hv-space-1);
+}
+
+.hv-header-popover__body {
+  font-size: var(--hv-text-sm);
+  color: var(--hv-text-secondary);
+  line-height: var(--hv-leading-normal);
+}

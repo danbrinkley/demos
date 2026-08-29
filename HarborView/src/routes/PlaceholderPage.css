@@ -1,0 +1,31 @@
+.hv-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--hv-space-3);
+  padding: var(--hv-space-9) 0;
+  max-width: 40ch;
+}
+
+.hv-placeholder__icon {
+  display: inline-flex;
+  color: var(--hv-teal-dark);
+}
+
+.hv-placeholder__icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.hv-placeholder__title {
+  font-family: var(--hv-font-display);
+  font-size: var(--hv-text-xl);
+  font-weight: 600;
+  color: var(--hv-navy);
+}
+
+.hv-placeholder__description {
+  font-size: var(--hv-text-base);
+  color: var(--hv-text-secondary);
+  line-height: var(--hv-leading-relaxed);
+}

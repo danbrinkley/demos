@@ -1,0 +1,19 @@
+/*
+ * Deliberately lighter than the primary cards: no card chrome, just a
+ * heading rule and row dividers, so this reads as a compact working list
+ * rather than a second tier of cards.
+ */
+.hv-attention-section {
+  min-width: 0;
+}
+
+.hv-attention-section__list {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 901px) {
+  .hv-attention-section {
+    padding-right: var(--hv-space-6);
+  }
+}
