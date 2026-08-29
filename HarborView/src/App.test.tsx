@@ -24,23 +24,23 @@ describe('Workspace Home', () => {
     expect(screen.queryByText(/office closed/i)).not.toBeInTheDocument();
   });
 
-  it('shows the top three, personal work views, and upcoming commitments from normalized data', () => {
+  it('shows consistent workload summaries, detailed work views, and upcoming commitments', () => {
     renderApp();
 
-    expect(screen.getByRole('heading', { name: 'Your top three' })).toBeInTheDocument();
-    expect(screen.getByText('Complete the Q3 program report')).toBeInTheDocument();
-    expect(screen.getByText('Prepare the partner briefing')).toBeInTheDocument();
-    expect(screen.getByText('Review intake decisions')).toBeInTheDocument();
+    const summary = screen.getByRole('region', { name: 'A clear view of your work' });
+    expect(within(summary).getByRole('heading', { level: 3, name: 'My tasks' })).toBeInTheDocument();
+    expect(within(summary).getByRole('heading', { level: 3, name: 'My requests' })).toBeInTheDocument();
+    expect(within(summary).getByRole('heading', { level: 3, name: 'Active projects' })).toBeInTheDocument();
 
-    expect(screen.getByRole('heading', { name: 'My tasks' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 2, name: 'My tasks' })).toBeInTheDocument();
     expect(screen.getByText('Expense pending approval')).toBeInTheDocument();
     expect(screen.getByText('Expense: consultant payment')).toBeInTheDocument();
     expect(screen.getByText('Intake form awaiting review')).toBeInTheDocument();
     expect(screen.getByText('Volunteer hours to log')).toBeInTheDocument();
 
-    expect(screen.getByRole('heading', { name: 'My requests' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 2, name: 'My requests' })).toBeInTheDocument();
     expect(screen.getByText('Fall Food Drive communications support')).toBeInTheDocument();
-    expect(screen.getByRole('heading', { name: 'Active projects' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 2, name: 'Active projects' })).toBeInTheDocument();
     expect(screen.getByRole('heading', { level: 3, name: 'Community Impact Report' })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: 'Upcoming' })).toBeInTheDocument();
     expect(screen.getByText('Program check-in')).toBeInTheDocument();

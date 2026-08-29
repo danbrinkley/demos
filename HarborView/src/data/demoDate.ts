@@ -93,3 +93,14 @@ export function relativeSinceLabel(iso: string, today: string = DEMO_TODAY): str
 export function dayLabel(iso: string, today: string = DEMO_TODAY): string {
   return daysFromToday(iso, today) === 0 ? 'Today' : weekdayLabel(iso);
 }
+
+export function workWeekStrip(startIso: string = DEMO_TODAY): Array<{ iso: string; weekday: string; day: number }> {
+  const start = parseIsoDate(startIso);
+  return Array.from({ length: 5 }, (_, index) => {
+    const date = new Date(start.getFullYear(), start.getMonth(), start.getDate() + index);
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return { iso: `${year}-${month}-${day}`, weekday: WEEKDAY_LABELS[date.getDay()].slice(0, 3), day: date.getDate() };
+  });
+}

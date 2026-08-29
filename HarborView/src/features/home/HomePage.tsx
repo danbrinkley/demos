@@ -1,16 +1,16 @@
 import { useEffect } from 'react';
 import { OrgAlertBanner } from '../../components/shell/OrgAlertBanner';
 import { DEMO_TODAY } from '../../data/demoDate';
-import { selectMyTasks, selectThisWeek, selectWhatNeedsYou } from '../../data/selectors';
+import { selectMyTasks, selectThisWeek } from '../../data/selectors';
 import { useWorkspaceData } from '../../state/WorkspaceDataContext';
 import { AttentionListSection } from './AttentionListSection';
 import { Greeting } from './Greeting';
 import './HomePage.css';
 import './homeShared.css';
 import { ThisWeekSection } from './ThisWeekSection';
-import { WhatNeedsYouSection } from './WhatNeedsYouSection';
 import { ActiveProjectsSection } from './ActiveProjectsSection';
 import { MyRequestsSection } from './MyRequestsSection';
+import { WorkSummarySection } from './WorkSummarySection';
 
 export function HomePage() {
   const {
@@ -27,7 +27,6 @@ export function HomePage() {
     clearItemFocus,
   } = useWorkspaceData();
 
-  const whatNeedsYou = selectWhatNeedsYou(workItems);
   const myTasks = selectMyTasks(workItems);
   const thisWeek = selectThisWeek(commitments);
 
@@ -53,25 +52,20 @@ export function HomePage() {
 
       <Greeting firstName={currentUser.firstName} today={DEMO_TODAY} />
 
-      <WhatNeedsYouSection
-        items={whatNeedsYou}
-        expandedIds={expandedItemIds}
-        onToggle={toggleItemExpanded}
-        onComplete={completeWorkItem}
-      />
+      <WorkSummarySection tasks={myTasks} requests={requests} projects={projects} />
 
-      <div className="hv-home__work-grid">
-        <div className="hv-home__work-column">
+      <div className="hv-home__dashboard-grid">
+        <div className="hv-home__work-area">
           <AttentionListSection
             items={myTasks}
             expandedIds={expandedItemIds}
             onToggle={toggleItemExpanded}
             onComplete={completeWorkItem}
           />
+          <MyRequestsSection requests={requests} />
           <ActiveProjectsSection projects={projects} />
         </div>
-        <aside className="hv-home__context-column" aria-label="Requests and upcoming commitments">
-          <MyRequestsSection requests={requests} />
+        <aside className="hv-home__upcoming" aria-label="Upcoming commitments">
           <ThisWeekSection commitments={thisWeek} />
         </aside>
       </div>

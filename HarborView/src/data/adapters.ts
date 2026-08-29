@@ -28,7 +28,7 @@ import type {
  */
 
 export function getMyOpenItems(): WorkItem[] {
-  return sampleWorkItems;
+  return sampleWorkItems.filter((item) => item.tier === 'attention');
 }
 
 export function getMyCommitments(): Commitment[] {

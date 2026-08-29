@@ -1,5 +1,6 @@
 import { CalendarCheck } from 'lucide-react';
 import type { Commitment } from '../../data/types';
+import { DEMO_TODAY, workWeekStrip } from '../../data/demoDate';
 import { EmptyState } from '../../components/common/EmptyState';
 import { CommitmentListItem } from './CommitmentListItem';
 import './ThisWeekSection.css';
@@ -9,6 +10,8 @@ interface ThisWeekSectionProps {
 }
 
 export function ThisWeekSection({ commitments }: ThisWeekSectionProps) {
+  const week = workWeekStrip();
+
   return (
     <section className="hv-this-week" aria-labelledby="hv-upcoming-heading">
       <div className="hv-panel-heading">
@@ -18,6 +21,16 @@ export function ThisWeekSection({ commitments }: ThisWeekSectionProps) {
             Upcoming
           </h2>
         </div>
+      </div>
+
+      <div className="hv-this-week__strip" aria-label="Week of August 31">
+        {week.map((day) => (
+          <div className={`hv-this-week__day${day.iso === DEMO_TODAY ? ' hv-this-week__day--today' : ''}`} key={day.iso}>
+            <span>{day.weekday}</span>
+            <strong>{day.day}</strong>
+            {commitments.some((commitment) => commitment.date === day.iso) ? <i aria-label="Commitment scheduled" /> : null}
+          </div>
+        ))}
       </div>
 
       {commitments.length === 0 ? (
