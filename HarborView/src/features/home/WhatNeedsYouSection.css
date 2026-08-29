@@ -4,13 +4,11 @@
 
 .hv-what-needs-you__grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.32fr) minmax(18rem, 0.68fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--hv-space-5);
   align-items: stretch;
 }
 
-@media (max-width: 900px) {
-  .hv-what-needs-you__grid {
-    grid-template-columns: 1fr;
-  }
+@media (max-width: 680px) {
+  .hv-what-needs-you__grid { grid-template-columns: 1fr; }
 }

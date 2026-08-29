@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { OrgAlertBanner } from '../../components/shell/OrgAlertBanner';
 import { DEMO_TODAY } from '../../data/demoDate';
-import { selectNeedsAttention, selectThisWeek, selectWhatNeedsYou } from '../../data/selectors';
+import { selectMyTasks, selectThisWeek, selectWhatNeedsYou } from '../../data/selectors';
 import { useWorkspaceData } from '../../state/WorkspaceDataContext';
 import { AttentionListSection } from './AttentionListSection';
 import { Greeting } from './Greeting';
@@ -9,12 +9,16 @@ import './HomePage.css';
 import './homeShared.css';
 import { ThisWeekSection } from './ThisWeekSection';
 import { WhatNeedsYouSection } from './WhatNeedsYouSection';
+import { ActiveProjectsSection } from './ActiveProjectsSection';
+import { MyRequestsSection } from './MyRequestsSection';
 
 export function HomePage() {
   const {
     currentUser,
     workItems,
     commitments,
+    requests,
+    projects,
     alert,
     completeWorkItem,
     expandedItemIds,
@@ -24,7 +28,7 @@ export function HomePage() {
   } = useWorkspaceData();
 
   const whatNeedsYou = selectWhatNeedsYou(workItems);
-  const needsAttention = selectNeedsAttention(workItems);
+  const myTasks = selectMyTasks(workItems);
   const thisWeek = selectThisWeek(commitments);
 
   // When search asks Home to open a specific item (already expanded by
@@ -56,14 +60,20 @@ export function HomePage() {
         onComplete={completeWorkItem}
       />
 
-      <div className="hv-home__secondary-row">
-        <AttentionListSection
-          items={needsAttention}
-          expandedIds={expandedItemIds}
-          onToggle={toggleItemExpanded}
-          onComplete={completeWorkItem}
-        />
-        <ThisWeekSection commitments={thisWeek} />
+      <div className="hv-home__work-grid">
+        <div className="hv-home__work-column">
+          <AttentionListSection
+            items={myTasks}
+            expandedIds={expandedItemIds}
+            onToggle={toggleItemExpanded}
+            onComplete={completeWorkItem}
+          />
+          <ActiveProjectsSection projects={projects} />
+        </div>
+        <aside className="hv-home__context-column" aria-label="Requests and upcoming commitments">
+          <MyRequestsSection requests={requests} />
+          <ThisWeekSection commitments={thisWeek} />
+        </aside>
       </div>
     </div>
   );

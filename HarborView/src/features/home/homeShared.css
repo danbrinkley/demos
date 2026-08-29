@@ -39,9 +39,36 @@
   text-transform: none;
   letter-spacing: -0.025em;
   color: var(--hv-navy);
+  font-size: clamp(1.35rem, 2vw, 1.65rem);
+}
+
+.hv-panel-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--hv-space-4);
   padding-bottom: var(--hv-space-4);
   margin-bottom: var(--hv-space-1);
   border-bottom: 1px solid var(--hv-border);
+}
+
+.hv-panel-heading__eyebrow {
+  margin-bottom: 0.2rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--hv-teal-dark);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hv-panel-heading__count {
+  padding: 0.3rem 0.55rem;
+  border-radius: var(--hv-radius-pill);
+  background: var(--hv-bg-sunken);
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--hv-text-muted);
+  white-space: nowrap;
 }
 
 @media (max-width: 640px) {

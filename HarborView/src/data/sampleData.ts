@@ -5,6 +5,8 @@ import type {
   Resource,
   StaffMember,
   WorkItem,
+  WorkspaceProject,
+  WorkspaceRequest,
 } from './types';
 
 /**
@@ -30,8 +32,53 @@ export const orgAlert: OrgAlert | null = null;
 
 export const sampleWorkItems: WorkItem[] = [
   {
-    id: 'expense-mileage-outreach',
+    id: 'report-q3-program',
     tier: 'primary',
+    kind: 'report',
+    title: 'Complete the Q3 program report',
+    sourceSystem: 'Community Impact Report',
+    status: 'in_progress',
+    statusLabel: 'In progress',
+    summary: 'Finish the outcome summary before board materials are assembled.',
+    detail:
+      'The Q3 Community Outreach program report feeds directly into Wednesday’s board materials. Completing the outcome summary today gives the board packet room to come together.',
+    dueDate: '2026-09-02',
+    primaryActionLabel: 'Continue report',
+    requiresAction: true,
+  },
+  {
+    id: 'food-drive-partner-briefing',
+    tier: 'primary',
+    kind: 'project',
+    title: 'Prepare the partner briefing',
+    sourceSystem: 'Fall Food Drive',
+    status: 'in_progress',
+    statusLabel: 'In progress',
+    summary: 'Confirm the distribution plan and partner responsibilities.',
+    detail:
+      'Tomorrow’s partner briefing needs the final distribution plan, contact list, and a clear handoff for each community site.',
+    dueDate: '2026-09-01',
+    primaryActionLabel: 'Open briefing',
+    requiresAction: true,
+  },
+  {
+    id: 'volunteer-intake-decisions',
+    tier: 'primary',
+    kind: 'intake',
+    title: 'Review intake decisions',
+    sourceSystem: 'Volunteer Intake Redesign',
+    status: 'awaiting_review',
+    statusLabel: 'Ready for review',
+    summary: 'Resolve the final two questions before the form can be tested.',
+    detail:
+      'The redesigned volunteer intake form is nearly ready for testing. The team needs your decision on availability options and emergency-contact guidance.',
+    dueDate: '2026-09-03',
+    primaryActionLabel: 'Review decisions',
+    requiresAction: true,
+  },
+  {
+    id: 'expense-mileage-outreach',
+    tier: 'attention',
     kind: 'expense',
     title: 'Expense pending approval',
     sourceSystem: 'Expense workflow',
@@ -44,21 +91,6 @@ export const sampleWorkItems: WorkItem[] = [
     detailActionLabel: 'Approve',
     completedStatusLabel: 'Approved — sent to Finance',
     completedAnnouncement: 'Expense approved and sent to Finance.',
-    requiresAction: true,
-  },
-  {
-    id: 'report-q3-program',
-    tier: 'primary',
-    kind: 'report',
-    title: 'Program report due',
-    sourceSystem: 'Program reporting',
-    status: 'in_progress',
-    statusLabel: 'In progress',
-    summary: 'Due September 2, 2026.',
-    detail:
-      'The Q3 Community Outreach program report feeds directly into Wednesday’s board materials, so finishing it a day ahead gives the board packet room to come together.',
-    dueDate: '2026-09-02',
-    primaryActionLabel: 'Continue report',
     requiresAction: true,
   },
   {
@@ -103,6 +135,60 @@ export const sampleWorkItems: WorkItem[] = [
     dueDate: '2026-09-04',
     primaryActionLabel: 'Log volunteer hours',
     requiresAction: true,
+  },
+];
+
+export const sampleRequests: WorkspaceRequest[] = [
+  {
+    id: 'request-communications-support',
+    title: 'Fall Food Drive communications support',
+    submittedDate: '2026-08-27',
+    status: 'assigned',
+    statusLabel: 'Assigned to Communications',
+  },
+  {
+    id: 'request-laptop-access',
+    title: 'Volunteer laptop access',
+    submittedDate: '2026-08-26',
+    status: 'pending_approval',
+    statusLabel: 'Pending IT approval',
+  },
+  {
+    id: 'request-staffing-support',
+    title: 'September outreach staffing support',
+    submittedDate: '2026-08-24',
+    status: 'awaiting_review',
+    statusLabel: 'Awaiting manager review',
+  },
+];
+
+export const sampleProjects: WorkspaceProject[] = [
+  {
+    id: 'project-impact-report',
+    title: 'Community Impact Report',
+    program: 'Community Outreach',
+    progress: 68,
+    health: 'on_track',
+    statusLabel: 'On track',
+    nextAction: 'Complete the Q3 outcome summary',
+  },
+  {
+    id: 'project-fall-food-drive',
+    title: 'Fall Food Drive',
+    program: 'Food Access',
+    progress: 42,
+    health: 'needs_attention',
+    statusLabel: 'Partner briefing due',
+    nextAction: 'Confirm partner responsibilities',
+  },
+  {
+    id: 'project-volunteer-intake',
+    title: 'Volunteer Intake Redesign',
+    program: 'Volunteer & Outreach',
+    progress: 81,
+    health: 'nearing_completion',
+    statusLabel: 'Nearing completion',
+    nextAction: 'Review final form decisions',
   },
 ];
 

@@ -6,7 +6,7 @@
   padding: clamp(1.65rem, 3vw, 2.5rem);
   display: flex;
   flex-direction: column;
-  min-height: 18rem;
+  min-height: 15rem;
   transition: transform var(--hv-duration-base) var(--hv-ease-spring),
     box-shadow var(--hv-duration-base) var(--hv-ease-spring);
 }
@@ -36,6 +36,11 @@
   box-shadow: var(--hv-shadow-card);
 }
 
+.hv-priority-card:nth-child(3).hv-priority-card--secondary {
+  background: linear-gradient(145deg, var(--hv-sandbar-soft), #faf6ef);
+  border-color: rgba(207, 198, 179, 0.72);
+}
+
 .hv-priority-card--completed {
   opacity: 0.82;
 }
@@ -51,7 +56,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: var(--hv-space-4);
+  gap: var(--hv-space-3);
   margin-bottom: var(--hv-space-2);
 }
 
@@ -63,7 +68,7 @@
    only wrap at genuinely narrow widths (see the 480px stack below). */
 .hv-priority-card__top .hv-status {
   flex-shrink: 0;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .hv-priority-card__source {
@@ -79,7 +84,7 @@
 }
 
 .hv-priority-card__title {
-  font-size: clamp(1.45rem, 2.5vw, 2.15rem);
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
   font-weight: 600;
   color: var(--hv-navy);
   letter-spacing: var(--hv-tracking-tight);
@@ -93,7 +98,8 @@
 }
 
 .hv-priority-card__summary {
-  font-size: var(--hv-text-base);
+  margin-top: var(--hv-space-2);
+  font-size: var(--hv-text-sm);
   color: var(--hv-text-secondary);
   line-height: var(--hv-leading-normal);
   max-width: 52ch;
@@ -193,7 +199,7 @@
 @media (max-width: 480px) {
   .hv-priority-card {
     padding: var(--hv-space-5);
-    min-height: 16rem;
+    min-height: 14rem;
   }
 
   .hv-priority-card__top {

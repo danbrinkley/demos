@@ -26,7 +26,7 @@ describe('WhatNeedsYouSection', () => {
     const items = [makeItem({ id: 'a' }), makeItem({ id: 'b', title: 'Program report due' })];
     render(<WhatNeedsYouSection items={items} expandedIds={new Set()} onToggle={noop} onComplete={noop} />);
 
-    expect(screen.getByRole('heading', { name: 'What needs you' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Your top three' })).toBeInTheDocument();
     expect(screen.getByText('Expense pending approval')).toBeInTheDocument();
     expect(screen.getByText('Program report due')).toBeInTheDocument();
   });

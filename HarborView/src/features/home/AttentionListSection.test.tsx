@@ -32,6 +32,6 @@ describe('AttentionListSection', () => {
 
   it('shows a calm empty state instead of an empty list when nothing needs attention', () => {
     render(<AttentionListSection items={[]} expandedIds={new Set()} onToggle={noop} onComplete={noop} />);
-    expect(screen.getByText('Nothing else needs a look today.')).toBeInTheDocument();
+    expect(screen.getByText('Your task list is clear.')).toBeInTheDocument();
   });
 });

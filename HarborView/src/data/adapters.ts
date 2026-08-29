@@ -1,5 +1,21 @@
-import { orgAlert, sampleCommitments, sampleResources, sampleStaff, sampleWorkItems } from './sampleData';
-import type { Commitment, OrgAlert, Resource, StaffMember, WorkItem } from './types';
+import {
+  orgAlert,
+  sampleCommitments,
+  sampleProjects,
+  sampleRequests,
+  sampleResources,
+  sampleStaff,
+  sampleWorkItems,
+} from './sampleData';
+import type {
+  Commitment,
+  OrgAlert,
+  Resource,
+  StaffMember,
+  WorkItem,
+  WorkspaceProject,
+  WorkspaceRequest,
+} from './types';
 
 /**
  * Local adapter layer.
@@ -17,6 +33,14 @@ export function getMyOpenItems(): WorkItem[] {
 
 export function getMyCommitments(): Commitment[] {
   return sampleCommitments;
+}
+
+export function getMyRequests(): WorkspaceRequest[] {
+  return sampleRequests;
+}
+
+export function getMyProjects(): WorkspaceProject[] {
+  return sampleProjects;
 }
 
 export function getOrgAlert(): OrgAlert | null {

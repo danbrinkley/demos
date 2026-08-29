@@ -9,6 +9,7 @@ import { HarborMark } from './HarborMark';
 import { NotificationsControl } from './NotificationsControl';
 import { PrimaryNav } from './PrimaryNav';
 import { UserMenu } from './UserMenu';
+import { WorkspaceFooter } from './WorkspaceFooter';
 
 interface AppShellProps {
   children: ReactNode;
@@ -72,6 +73,8 @@ export function AppShell({ children }: AppShellProps) {
       <main id="hv-main-content" className="hv-shell__main">
         {children}
       </main>
+
+      <WorkspaceFooter />
 
       <LiveRegion message={liveMessage} />
     </div>

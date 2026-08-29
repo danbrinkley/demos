@@ -13,13 +13,19 @@ interface AttentionListSectionProps {
 
 export function AttentionListSection({ items, expandedIds, onToggle, onComplete }: AttentionListSectionProps) {
   return (
-    <section className="hv-attention-section" aria-labelledby="hv-attention-heading">
-      <h2 id="hv-attention-heading" className="hv-section-heading hv-section-heading--secondary">
-        Needs your attention
-      </h2>
+    <section className="hv-attention-section" aria-labelledby="hv-tasks-heading">
+      <div className="hv-panel-heading">
+        <div>
+          <p className="hv-panel-heading__eyebrow">Your working queue</p>
+          <h2 id="hv-tasks-heading" className="hv-section-heading hv-section-heading--secondary">
+            My tasks
+          </h2>
+        </div>
+        <span className="hv-panel-heading__count">{items.length} open</span>
+      </div>
 
       {items.length === 0 ? (
-        <EmptyState icon={<Inbox />} title="Nothing else needs a look today." />
+        <EmptyState icon={<Inbox />} title="Your task list is clear." />
       ) : (
         <ul className="hv-attention-section__list">
           {items.map((item) => (

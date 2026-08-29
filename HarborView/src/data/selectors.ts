@@ -15,6 +15,12 @@ export function selectNeedsAttention(items: WorkItem[]): WorkItem[] {
   return items.filter((item) => item.tier === 'attention' && item.requiresAction);
 }
 
+/** Personal task queue retains just-completed items so actions do not vanish
+ * the moment they are taken; their shared WorkItem status changes in place. */
+export function selectMyTasks(items: WorkItem[]): WorkItem[] {
+  return items.filter((item) => item.tier === 'attention');
+}
+
 export function selectThisWeek(commitments: Commitment[]): Commitment[] {
   return [...commitments].sort((a, b) => a.date.localeCompare(b.date));
 }

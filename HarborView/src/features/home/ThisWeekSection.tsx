@@ -10,10 +10,15 @@ interface ThisWeekSectionProps {
 
 export function ThisWeekSection({ commitments }: ThisWeekSectionProps) {
   return (
-    <section className="hv-this-week" aria-labelledby="hv-this-week-heading">
-      <h2 id="hv-this-week-heading" className="hv-section-heading hv-section-heading--secondary">
-        This week
-      </h2>
+    <section className="hv-this-week" aria-labelledby="hv-upcoming-heading">
+      <div className="hv-panel-heading">
+        <div>
+          <p className="hv-panel-heading__eyebrow">What is ahead</p>
+          <h2 id="hv-upcoming-heading" className="hv-section-heading hv-section-heading--secondary">
+            Upcoming
+          </h2>
+        </div>
+      </div>
 
       {commitments.length === 0 ? (
         <EmptyState icon={<CalendarCheck />} title="A light week — nothing else on the calendar." />

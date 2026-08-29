@@ -3,17 +3,30 @@ import type { ReactNode } from 'react';
 import {
   getMyCommitments,
   getMyOpenItems,
+  getMyProjects,
+  getMyRequests,
   getOrgAlert,
   getResourceCatalog,
   getStaffDirectory,
 } from '../data/adapters';
 import { currentUser } from '../data/sampleData';
-import type { Commitment, CurrentUser, OrgAlert, Resource, StaffMember, WorkItem } from '../data/types';
+import type {
+  Commitment,
+  CurrentUser,
+  OrgAlert,
+  Resource,
+  StaffMember,
+  WorkItem,
+  WorkspaceProject,
+  WorkspaceRequest,
+} from '../data/types';
 
 interface WorkspaceDataContextValue {
   currentUser: CurrentUser;
   workItems: WorkItem[];
   commitments: Commitment[];
+  requests: WorkspaceRequest[];
+  projects: WorkspaceProject[];
   alert: OrgAlert | null;
   staff: StaffMember[];
   resources: Resource[];
@@ -40,6 +53,8 @@ export function WorkspaceDataProvider({ children }: { children: ReactNode }) {
 
   // Loaded once from the adapter layer; this demo never mutates these locally.
   const [commitments] = useState<Commitment[]>(() => getMyCommitments());
+  const [requests] = useState<WorkspaceRequest[]>(() => getMyRequests());
+  const [projects] = useState<WorkspaceProject[]>(() => getMyProjects());
   const [alert] = useState<OrgAlert | null>(() => getOrgAlert());
   const [staff] = useState<StaffMember[]>(() => getStaffDirectory());
   const [resources] = useState<Resource[]>(() => getResourceCatalog());
@@ -91,6 +106,8 @@ export function WorkspaceDataProvider({ children }: { children: ReactNode }) {
       currentUser,
       workItems,
       commitments,
+      requests,
+      projects,
       alert,
       staff,
       resources,
@@ -105,6 +122,8 @@ export function WorkspaceDataProvider({ children }: { children: ReactNode }) {
     [
       workItems,
       commitments,
+      requests,
+      projects,
       alert,
       staff,
       resources,

@@ -11,7 +11,7 @@
 
 export type WorkItemTier = 'primary' | 'attention';
 
-export type WorkItemKind = 'expense' | 'report' | 'payment' | 'intake' | 'volunteer_hours';
+export type WorkItemKind = 'expense' | 'report' | 'payment' | 'intake' | 'project' | 'volunteer_hours';
 
 export type WorkItemStatus =
   | 'pending_approval'
@@ -56,6 +56,28 @@ export interface Commitment {
   date: string;
   source: CommitmentSource;
   detail?: string;
+}
+
+export type RequestStatus = 'assigned' | 'pending_approval' | 'awaiting_review';
+
+export interface WorkspaceRequest {
+  id: string;
+  title: string;
+  submittedDate: string;
+  status: RequestStatus;
+  statusLabel: string;
+}
+
+export type ProjectHealth = 'on_track' | 'needs_attention' | 'nearing_completion';
+
+export interface WorkspaceProject {
+  id: string;
+  title: string;
+  program: string;
+  progress: number;
+  health: ProjectHealth;
+  statusLabel: string;
+  nextAction: string;
 }
 
 export type AlertSeverity = 'notice';

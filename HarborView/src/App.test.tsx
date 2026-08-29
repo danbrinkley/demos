@@ -24,17 +24,25 @@ describe('Workspace Home', () => {
     expect(screen.queryByText(/office closed/i)).not.toBeInTheDocument();
   });
 
-  it('shows the two primary items, three attention items, and three commitments from one shared data source', () => {
+  it('shows the top three, personal work views, and upcoming commitments from normalized data', () => {
     renderApp();
 
-    expect(screen.getByRole('heading', { name: 'What needs you' })).toBeInTheDocument();
-    expect(screen.getByText('Expense pending approval')).toBeInTheDocument();
-    expect(screen.getByText('Program report due')).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Your top three' })).toBeInTheDocument();
+    expect(screen.getByText('Complete the Q3 program report')).toBeInTheDocument();
+    expect(screen.getByText('Prepare the partner briefing')).toBeInTheDocument();
+    expect(screen.getByText('Review intake decisions')).toBeInTheDocument();
 
+    expect(screen.getByRole('heading', { name: 'My tasks' })).toBeInTheDocument();
+    expect(screen.getByText('Expense pending approval')).toBeInTheDocument();
     expect(screen.getByText('Expense: consultant payment')).toBeInTheDocument();
     expect(screen.getByText('Intake form awaiting review')).toBeInTheDocument();
     expect(screen.getByText('Volunteer hours to log')).toBeInTheDocument();
 
+    expect(screen.getByRole('heading', { name: 'My requests' })).toBeInTheDocument();
+    expect(screen.getByText('Fall Food Drive communications support')).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Active projects' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 3, name: 'Community Impact Report' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Upcoming' })).toBeInTheDocument();
     expect(screen.getByText('Program check-in')).toBeInTheDocument();
     expect(screen.getByText('Board materials due')).toBeInTheDocument();
     expect(screen.getByText('Alvarez out of office')).toBeInTheDocument();
@@ -59,7 +67,7 @@ describe('Workspace Home', () => {
     renderApp();
 
     // 1. Open the expense item's detail panel.
-    const reviewButton = screen.getByRole('button', { name: /Review expense/ });
+    const reviewButton = screen.getByRole('button', { name: /Expense pending approval/ });
     await user.click(reviewButton);
     expect(reviewButton).toHaveAttribute('aria-expanded', 'true');
     expect(
@@ -70,8 +78,7 @@ describe('Workspace Home', () => {
     const approveButton = screen.getByRole('button', { name: 'Approve' });
     await user.click(approveButton);
 
-    // 3. The primary card reflects the approved state — both the status pill
-    // and the detail panel's closure message read "Approved — sent to Finance".
+    // 3. The task row and detail panel reflect the approved state.
     expect(screen.getAllByText('Approved — sent to Finance').length).toBeGreaterThanOrEqual(2);
     expect(screen.queryByRole('button', { name: 'Approve' })).not.toBeInTheDocument();
 
@@ -92,7 +99,7 @@ describe('Workspace Home', () => {
 
     // Selecting a work item result should route back to Home and open its panel.
     expect(await screen.findByRole('heading', { level: 1, name: 'Good morning, Jordan' })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /Review expense/ })).toHaveAttribute('aria-expanded', 'true');
+    expect(screen.getByRole('button', { name: /Expense pending approval/ })).toHaveAttribute('aria-expanded', 'true');
   });
 
   it('shows a clear placeholder when a search result is outside Week 1 scope', async () => {

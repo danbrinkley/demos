@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { selectNeedsAttention, selectThisWeek, selectWhatNeedsYou, searchWorkspace } from './selectors';
+import { selectMyTasks, selectNeedsAttention, selectThisWeek, selectWhatNeedsYou, searchWorkspace } from './selectors';
 import type { Commitment, Resource, StaffMember, WorkItem } from './types';
 
 function makeWorkItem(overrides: Partial<WorkItem>): WorkItem {
@@ -37,6 +37,7 @@ describe('selectWhatNeedsYou / selectNeedsAttention', () => {
     ];
 
     expect(selectNeedsAttention(items).map((i) => i.id)).toEqual(['a']);
+    expect(selectMyTasks(items).map((i) => i.id)).toEqual(['a', 'b']);
   });
 
   it('returns an empty array for the sparse and all-complete cases (no separate empty-state data needed)', () => {

@@ -12,8 +12,8 @@ interface WhatNeedsYouSectionProps {
 }
 
 /**
- * The primary section and strongest visual priority on Home. Two work
- * items, card treatment, one clear next action each.
+ * The primary section and strongest visual priority on Home. Three ranked
+ * focus items drawn from the normalized work queue.
  */
 export function WhatNeedsYouSection({ items, expandedIds, onToggle, onComplete }: WhatNeedsYouSectionProps) {
   const remaining = items.filter((item) => !item.completed);
@@ -22,12 +22,12 @@ export function WhatNeedsYouSection({ items, expandedIds, onToggle, onComplete }
     <section className="hv-what-needs-you" aria-labelledby="hv-what-needs-you-heading">
       <div className="hv-section-intro">
         <div>
-          <p className="hv-section-eyebrow">Today at Harbor</p>
+          <p className="hv-section-eyebrow">What needs you today</p>
           <h2 id="hv-what-needs-you-heading" className="hv-section-heading">
-            What needs you
+            Your top three
           </h2>
         </div>
-        <p className="hv-section-intro__copy">Start with the work only you can move.</p>
+        <p className="hv-section-intro__copy">The work most deserving of your focus right now.</p>
       </div>
 
       {items.length === 0 ? (
