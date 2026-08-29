@@ -10,6 +10,7 @@
   z-index: 40;
   background: var(--hv-bg-surface-raised);
   border-bottom: 1px solid var(--hv-border);
+  border-top: 3px solid var(--hv-coral);
 }
 
 .hv-shell__header-inner {
@@ -32,23 +33,28 @@
 
 .hv-brand__text {
   display: flex;
-  align-items: baseline;
-  gap: var(--hv-space-2);
+  flex-direction: column;
+  gap: 0;
   white-space: nowrap;
 }
 
 .hv-brand__primary {
   font-family: var(--hv-font-display);
   font-weight: 600;
-  font-size: var(--hv-text-md);
-  letter-spacing: var(--hv-tracking-tight);
+  font-size: 1.1rem;
+  line-height: 1.05;
+  letter-spacing: -0.015em;
   color: var(--hv-navy);
 }
 
 .hv-brand__secondary {
-  font-size: var(--hv-text-xs);
-  color: var(--hv-text-muted);
-  font-weight: 500;
+  margin-top: 0.2rem;
+  font-size: 0.59rem;
+  color: var(--hv-teal-dark);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .hv-shell__nav--desktop {
@@ -104,7 +110,7 @@
   max-width: var(--hv-content-max-width);
   width: 100%;
   margin-inline: auto;
-  padding: var(--hv-space-6) var(--hv-page-padding-inline) var(--hv-space-9);
+  padding: var(--hv-space-5) var(--hv-page-padding-inline) var(--hv-space-9);
 }
 
 @media (max-width: 900px) {

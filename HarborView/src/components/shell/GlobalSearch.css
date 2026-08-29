@@ -25,7 +25,7 @@
 .hv-search__input {
   width: 100%;
   height: 100%;
-  border-radius: var(--hv-radius-pill);
+  border-radius: var(--hv-radius-md);
   border: 1px solid var(--hv-border);
   background: var(--hv-bg-surface);
   padding-inline: var(--hv-space-7) 2.75rem;
@@ -65,7 +65,7 @@
   justify-content: center;
   width: 2.75rem;
   height: 100%;
-  border-radius: 0 var(--hv-radius-pill) var(--hv-radius-pill) 0;
+  border-radius: 0 var(--hv-radius-md) var(--hv-radius-md) 0;
   border: none;
   background: transparent;
   color: var(--hv-text-muted);

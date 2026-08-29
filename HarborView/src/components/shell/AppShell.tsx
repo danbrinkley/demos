@@ -36,7 +36,7 @@ export function AppShell({ children }: AppShellProps) {
             <HarborMark />
             <span className="hv-brand__text">
               <span className="hv-brand__primary">Harbor View</span>
-              <span className="hv-brand__secondary">Workspace</span>
+              <span className="hv-brand__secondary">Community Services Workspace</span>
             </span>
           </div>
 

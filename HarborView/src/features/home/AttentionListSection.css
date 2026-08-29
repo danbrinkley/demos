@@ -5,15 +5,13 @@
  */
 .hv-attention-section {
   min-width: 0;
+  padding: clamp(1.4rem, 2.5vw, 2rem);
+  background: var(--hv-bg-surface-raised);
+  border-radius: var(--hv-radius-lg);
+  box-shadow: var(--hv-shadow-card);
 }
 
 .hv-attention-section__list {
   display: flex;
   flex-direction: column;
-}
-
-@media (min-width: 901px) {
-  .hv-attention-section {
-    padding-right: var(--hv-space-6);
-  }
 }

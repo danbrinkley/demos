@@ -12,13 +12,15 @@
 
 .hv-commitment-item__day {
   flex-shrink: 0;
-  width: 4.5rem;
+  width: 5rem;
   font-size: var(--hv-text-xs);
   font-weight: 600;
   color: var(--hv-teal-dark);
   text-transform: uppercase;
   letter-spacing: var(--hv-tracking-wide);
-  padding-top: 0.2rem;
+  padding: 0.3rem 0.45rem;
+  border-radius: var(--hv-radius-sm);
+  background: rgba(255, 255, 255, 0.62);
 }
 
 .hv-commitment-item__body {

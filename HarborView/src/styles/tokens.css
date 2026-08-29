@@ -22,10 +22,12 @@
   --hv-charcoal: #2b2b2b;
 
   /* ---- Neutrals (warm, off-white ground) ---- */
-  --hv-bg-page: #f8f5f0;
-  --hv-bg-surface: #fffdfa;
+  --hv-bg-page: #f6f1e9;
+  --hv-bg-surface: #fffcf7;
   --hv-bg-surface-raised: #ffffff;
   --hv-bg-sunken: #f1ece3;
+  --hv-bg-teal-wash: #e8f1ef;
+  --hv-bg-navy-wash: #eef2f3;
   --hv-border: #e3dccd;
   --hv-border-strong: #cfc6b3;
   --hv-text-primary: var(--hv-charcoal);
@@ -86,19 +88,20 @@
   --hv-space-9: 4rem;
 
   /* ---- Layout ---- */
-  --hv-content-max-width: 1180px;
+  --hv-content-max-width: 1240px;
   --hv-page-padding-inline: clamp(1.25rem, 4vw, 3rem);
   --hv-header-height: 4rem;
 
   /* ---- Radii ---- */
   --hv-radius-sm: 6px;
   --hv-radius-md: 10px;
-  --hv-radius-lg: 14px;
+  --hv-radius-lg: 18px;
+  --hv-radius-xl: 24px;
   --hv-radius-pill: 999px;
 
   /* ---- Elevation (subtle, warm-tinted, layered) ---- */
-  --hv-shadow-card: 0 1px 2px rgba(28, 58, 75, 0.06), 0 6px 16px -4px rgba(28, 58, 75, 0.08);
-  --hv-shadow-raised: 0 2px 4px rgba(28, 58, 75, 0.08), 0 12px 24px -8px rgba(28, 58, 75, 0.12);
+  --hv-shadow-card: 0 1px 2px rgba(28, 58, 75, 0.06), 0 10px 28px -14px rgba(28, 58, 75, 0.2);
+  --hv-shadow-raised: 0 2px 6px rgba(28, 58, 75, 0.08), 0 22px 50px -22px rgba(28, 58, 75, 0.28);
   --hv-shadow-focus: 0 0 0 3px rgba(47, 111, 112, 0.35);
 
   /* ---- Motion ---- */

@@ -18,7 +18,7 @@
   min-height: 2.75rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: var(--hv-space-3);
   padding: var(--hv-space-3) var(--hv-space-1);
   background: transparent;
@@ -26,6 +26,23 @@
   text-align: left;
   cursor: pointer;
   border-radius: var(--hv-radius-sm);
+}
+
+.hv-attention-item__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  flex: 0 0 2rem;
+  border-radius: 50%;
+  color: var(--hv-teal-dark);
+  background: var(--hv-bg-teal-wash);
+}
+
+.hv-attention-item__icon svg {
+  width: 15px;
+  height: 15px;
 }
 
 .hv-attention-item__row:hover {
@@ -50,6 +67,7 @@
   height: 16px;
   color: var(--hv-text-muted);
   flex-shrink: 0;
+  margin-left: auto;
   transition: transform var(--hv-duration-base) var(--hv-ease-spring);
 }
 

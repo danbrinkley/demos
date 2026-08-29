@@ -20,9 +20,15 @@ export function WhatNeedsYouSection({ items, expandedIds, onToggle, onComplete }
 
   return (
     <section className="hv-what-needs-you" aria-labelledby="hv-what-needs-you-heading">
-      <h2 id="hv-what-needs-you-heading" className="hv-section-heading">
-        What needs you
-      </h2>
+      <div className="hv-section-intro">
+        <div>
+          <p className="hv-section-eyebrow">Today at Harbor</p>
+          <h2 id="hv-what-needs-you-heading" className="hv-section-heading">
+            What needs you
+          </h2>
+        </div>
+        <p className="hv-section-intro__copy">Start with the work only you can move.</p>
+      </div>
 
       {items.length === 0 ? (
         <EmptyState

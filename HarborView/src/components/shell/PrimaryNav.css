@@ -11,7 +11,8 @@
   min-height: 2.75rem;
   min-width: 2.75rem;
   padding-inline: var(--hv-space-3);
-  border-radius: var(--hv-radius-md);
+  border-radius: 0;
+  border-bottom: 2px solid transparent;
   font-size: var(--hv-text-base);
   font-weight: 500;
   color: var(--hv-text-secondary);
@@ -21,14 +22,16 @@
 }
 
 .hv-primary-nav__link:hover {
-  background: var(--hv-bg-sunken);
+  background: transparent;
   color: var(--hv-navy);
+  border-bottom-color: var(--hv-sandbar);
 }
 
 .hv-primary-nav__link--active {
   color: var(--hv-navy);
   font-weight: 600;
-  background: var(--hv-sandbar-soft);
+  background: transparent;
+  border-bottom-color: var(--hv-teal);
 }
 
 @media (max-width: 767px) {
@@ -40,5 +43,14 @@
 
   .hv-primary-nav__link {
     width: 100%;
+    justify-content: flex-start;
+    border-bottom: none;
+    border-left: 3px solid transparent;
+    border-radius: var(--hv-radius-sm);
+  }
+
+  .hv-primary-nav__link--active {
+    border-left-color: var(--hv-teal);
+    background: var(--hv-bg-teal-wash);
   }
 }

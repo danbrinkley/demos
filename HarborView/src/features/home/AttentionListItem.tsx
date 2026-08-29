@@ -1,4 +1,4 @@
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Clock3, CreditCard, FileCheck2 } from 'lucide-react';
 import { useId } from 'react';
 import type { WorkItem } from '../../data/types';
 import { StatusIndicator } from '../../components/common/StatusIndicator';
@@ -21,6 +21,7 @@ function toneFor(item: WorkItem): StatusTone {
 
 export function AttentionListItem({ item, isExpanded, onToggle, onComplete }: AttentionListItemProps) {
   const panelId = useId();
+  const ItemIcon = item.kind === 'payment' ? CreditCard : item.kind === 'intake' ? FileCheck2 : Clock3;
 
   return (
     <li id={`work-item-${item.id}`} tabIndex={-1} className="hv-attention-item">
@@ -31,6 +32,9 @@ export function AttentionListItem({ item, isExpanded, onToggle, onComplete }: At
         aria-controls={panelId}
         onClick={() => onToggle(item.id)}
       >
+        <span className="hv-attention-item__icon" aria-hidden="true">
+          <ItemIcon />
+        </span>
         <span className="hv-attention-item__text">
           <span className="hv-attention-item__title">{item.title}</span>
           <StatusIndicator tone={toneFor(item)} label={item.statusLabel} compact />

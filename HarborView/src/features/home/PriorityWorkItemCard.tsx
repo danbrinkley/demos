@@ -31,7 +31,7 @@ export function PriorityWorkItemCard({ item, emphasis, isExpanded, onToggle, onC
     <article
       id={`work-item-${item.id}`}
       tabIndex={-1}
-      className={`hv-priority-card${item.completed ? ' hv-priority-card--completed' : ''}`}
+      className={`hv-priority-card hv-priority-card--${emphasis}${item.completed ? ' hv-priority-card--completed' : ''}`}
     >
       <div className="hv-priority-card__top">
         <div className="hv-priority-card__heading-group">

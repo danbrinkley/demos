@@ -1,16 +1,43 @@
 .hv-priority-card {
-  background: var(--hv-bg-surface-raised);
-  border: 1px solid var(--hv-border);
-  border-radius: var(--hv-radius-lg);
-  box-shadow: var(--hv-shadow-card);
-  padding: var(--hv-space-6);
+  position: relative;
+  overflow: hidden;
+  border: none;
+  border-radius: var(--hv-radius-xl);
+  padding: clamp(1.65rem, 3vw, 2.5rem);
   display: flex;
   flex-direction: column;
-  transition: box-shadow var(--hv-duration-base) var(--hv-ease-spring);
+  min-height: 18rem;
+  transition: transform var(--hv-duration-base) var(--hv-ease-spring),
+    box-shadow var(--hv-duration-base) var(--hv-ease-spring);
+}
+
+.hv-priority-card--primary {
+  background: var(--hv-navy);
+  color: var(--hv-text-on-navy);
+  box-shadow: var(--hv-shadow-raised);
+}
+
+.hv-priority-card--primary::before {
+  content: '';
+  position: absolute;
+  width: 13rem;
+  height: 13rem;
+  right: -5rem;
+  bottom: -7rem;
+  border: 1px solid rgba(155, 198, 195, 0.3);
+  border-radius: 50%;
+  box-shadow: 0 0 0 2.6rem rgba(75, 139, 140, 0.07), 0 0 0 5rem rgba(75, 139, 140, 0.045);
+  pointer-events: none;
+}
+
+.hv-priority-card--secondary {
+  background: linear-gradient(145deg, #e7f0ee, #f4f6f2);
+  border: 1px solid rgba(75, 139, 140, 0.22);
+  box-shadow: var(--hv-shadow-card);
 }
 
 .hv-priority-card--completed {
-  background: var(--hv-bg-surface);
+  opacity: 0.82;
 }
 
 /* Receives programmatic focus when opened from search — visible even
@@ -47,11 +74,22 @@
   margin-bottom: var(--hv-space-1);
 }
 
+.hv-priority-card--primary .hv-priority-card__source {
+  color: #9bc6c3;
+}
+
 .hv-priority-card__title {
-  font-size: var(--hv-text-lg);
+  font-size: clamp(1.45rem, 2.5vw, 2.15rem);
   font-weight: 600;
   color: var(--hv-navy);
   letter-spacing: var(--hv-tracking-tight);
+  line-height: 1.2;
+}
+
+.hv-priority-card--primary .hv-priority-card__title {
+  font-family: var(--hv-font-display);
+  color: var(--hv-text-on-navy);
+  letter-spacing: -0.03em;
 }
 
 .hv-priority-card__summary {
@@ -59,6 +97,19 @@
   color: var(--hv-text-secondary);
   line-height: var(--hv-leading-normal);
   max-width: 52ch;
+}
+
+.hv-priority-card--primary .hv-priority-card__summary,
+.hv-priority-card--primary .hv-priority-card__due {
+  color: rgba(246, 242, 234, 0.76);
+}
+
+.hv-priority-card--primary .hv-status__label {
+  color: #f0c6ae;
+}
+
+.hv-priority-card--primary .hv-status__dot {
+  background: #efa878;
 }
 
 .hv-priority-card__due {
@@ -69,7 +120,8 @@
 
 .hv-priority-card__toggle {
   align-self: flex-start;
-  margin-top: var(--hv-space-5);
+  margin-top: auto;
+  padding-top: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -93,14 +145,14 @@
 /* Primary emphasis: the clearest next action on the screen (the first
    "What needs you" item) — a restrained filled Harbor Navy button. */
 .hv-priority-card__toggle--primary {
-  border: 1px solid var(--hv-navy);
-  background: var(--hv-navy);
-  color: var(--hv-text-on-navy);
+  border: 1px solid var(--hv-coral);
+  background: var(--hv-coral);
+  color: var(--hv-charcoal);
 }
 
 .hv-priority-card__toggle--primary:hover {
-  background: var(--hv-navy-soft);
-  border-color: var(--hv-navy-soft);
+  background: var(--hv-coral-hover);
+  border-color: var(--hv-coral-hover);
 }
 
 /* Secondary emphasis: still a real action, deliberately quieter — outlined,
@@ -109,6 +161,19 @@
   border: 1px solid var(--hv-navy);
   background: transparent;
   color: var(--hv-navy);
+}
+
+.hv-priority-card__summary + .hv-priority-card__toggle,
+.hv-priority-card__due + .hv-priority-card__toggle {
+  margin-top: auto;
+}
+
+.hv-priority-card--primary .hv-detail-panel {
+  border-top-color: rgba(246, 242, 234, 0.2);
+}
+
+.hv-priority-card--primary .hv-detail-panel__text {
+  color: rgba(246, 242, 234, 0.82);
 }
 
 .hv-priority-card__toggle--secondary:hover {
@@ -128,6 +193,7 @@
 @media (max-width: 480px) {
   .hv-priority-card {
     padding: var(--hv-space-5);
+    min-height: 16rem;
   }
 
   .hv-priority-card__top {
