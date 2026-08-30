@@ -44,7 +44,11 @@ export function getMyProjects(): WorkspaceProject[] {
 }
 
 export function getOrgAlert(): OrgAlert | null {
-  return orgAlert;
+  return orgAlert ?? {
+    id: 'office-closure-september-7',
+    message: 'Main office closed Monday, September 7',
+    severity: 'notice',
+  };
 }
 
 export function getStaffDirectory(): StaffMember[] {

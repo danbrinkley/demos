@@ -3,9 +3,13 @@
   flex-direction: column;
   align-items: flex-start;
   gap: var(--hv-space-3);
-  padding: var(--hv-space-9) 0;
-  max-width: 40ch;
+  width: 100%;
+  max-width: var(--hv-content-max-width);
+  margin-inline: auto;
+  padding: var(--hv-space-9) var(--hv-page-padding-inline);
 }
+
+.hv-placeholder > * { max-width: 40ch; }
 
 .hv-placeholder__icon {
   display: inline-flex;

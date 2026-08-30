@@ -1,51 +1,10 @@
-.hv-home {
-  display: flex;
-  flex-direction: column;
-}
-
-.hv-home > .hv-org-alert {
-  margin-bottom: var(--hv-space-6);
-}
-
-.hv-home__dashboard-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 3fr) minmax(17rem, 1fr);
-  gap: var(--hv-space-5);
-  align-items: start;
-}
-
-.hv-home__work-area {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  min-width: 0;
-  overflow: hidden;
-  background: var(--hv-bg-surface-raised);
-  border: 1px solid var(--hv-border);
-  border-radius: var(--hv-radius-lg);
-  box-shadow: var(--hv-shadow-card);
-}
-
-.hv-home__work-area > section {
-  min-width: 0;
-  padding: clamp(1.25rem, 2vw, 1.75rem);
-  background: transparent;
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-}
-
-.hv-home__work-area > section + section {
-  border-left: 1px solid var(--hv-border);
-}
-
+.hv-home { display: flex; flex-direction: column; }
+.hv-home__content { width: 100%; max-width: var(--hv-content-max-width); margin-inline: auto; padding: var(--hv-space-6) var(--hv-page-padding-inline) var(--hv-space-9); }
+.hv-home__dashboard-grid { display: grid; grid-template-columns: minmax(0, 2.2fr) minmax(17rem, 0.8fr); gap: var(--hv-space-5); align-items: start; }
+.hv-home__work-area { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); min-width: 0; overflow: hidden; background: var(--hv-bg-surface-raised); border: 1px solid var(--hv-border); border-radius: var(--hv-radius-lg); box-shadow: var(--hv-shadow-card); }
+.hv-home__work-area > section { min-width: 0; padding: clamp(1.25rem, 2vw, 1.75rem); background: transparent; border: 0; border-radius: 0; box-shadow: none; }
+.hv-home__work-area > section + section { border-left: 1px solid var(--hv-border); }
 .hv-home__upcoming { min-width: 0; }
 .hv-home__upcoming .hv-this-week { box-shadow: none; }
-
-@media (max-width: 1080px) {
-  .hv-home__dashboard-grid { grid-template-columns: 1fr; }
-}
-
-@media (max-width: 760px) {
-  .hv-home__work-area { grid-template-columns: 1fr; }
-  .hv-home__work-area > section + section { border-top: 1px solid var(--hv-border); border-left: 0; }
-}
+@media (max-width: 1080px) { .hv-home__dashboard-grid { grid-template-columns: 1fr; } }
+@media (max-width: 760px) { .hv-home__work-area { grid-template-columns: 1fr; } .hv-home__work-area > section + section { border-top: 1px solid var(--hv-border); border-left: 0; } }

@@ -5,7 +5,7 @@ import { useWorkspaceData } from '../../state/WorkspaceDataContext';
 import { LiveRegion } from '../common/LiveRegion';
 import './AppShell.css';
 import { GlobalSearch } from './GlobalSearch';
-import { HarborMark } from './HarborMark';
+import { HarborLogo } from './HarborLogo';
 import { NotificationsControl } from './NotificationsControl';
 import { PrimaryNav } from './PrimaryNav';
 import { UserMenu } from './UserMenu';
@@ -34,11 +34,7 @@ export function AppShell({ children }: AppShellProps) {
       <header className="hv-shell__header">
         <div className="hv-shell__header-inner">
           <div className="hv-shell__brand">
-            <HarborMark />
-            <span className="hv-brand__text">
-              <span className="hv-brand__primary">Harbor View</span>
-              <span className="hv-brand__secondary">Community Services Workspace</span>
-            </span>
+            <HarborLogo />
           </div>
 
           <div className="hv-shell__nav hv-shell__nav--desktop">

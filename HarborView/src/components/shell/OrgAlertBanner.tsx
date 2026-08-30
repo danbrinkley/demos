@@ -1,4 +1,3 @@
-import { Megaphone } from 'lucide-react';
 import type { OrgAlert } from '../../data/types';
 import './OrgAlertBanner.css';
 
@@ -15,9 +14,14 @@ export function OrgAlertBanner({ alert }: OrgAlertBannerProps) {
   if (!alert) return null;
 
   return (
-    <div className="hv-org-alert" role="status">
-      <Megaphone aria-hidden="true" className="hv-org-alert__icon" />
-      <p className="hv-org-alert__message">{alert.message}</p>
+    <div className="hv-org-alert">
+      <div className="hv-org-alert__inner">
+        <span className="hv-org-alert__label">Organization notice</span>
+        <span className="hv-org-alert__divider" aria-hidden="true">·</span>
+        <p className="hv-org-alert__message">{alert.message}</p>
+        <span className="hv-org-alert__divider" aria-hidden="true">·</span>
+        <a href="/resources#office-closure">View details</a>
+      </div>
     </div>
   );
 }

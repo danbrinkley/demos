@@ -19,15 +19,16 @@ describe('Workspace Home', () => {
     expect(screen.getByText('Monday, August 31')).toBeInTheDocument();
   });
 
-  it('shows no organizational alert on a normal day', () => {
+  it('shows the current organization-wide notice', () => {
     renderApp();
-    expect(screen.queryByText(/office closed/i)).not.toBeInTheDocument();
+    expect(screen.getByText(/Main office closed Monday, September 7/i)).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'View details' })).toHaveAttribute('href', '/resources#office-closure');
   });
 
   it('shows consistent workload summaries, detailed work views, and upcoming commitments', () => {
     renderApp();
 
-    const summary = screen.getByRole('region', { name: 'A clear view of your work' });
+    const summary = screen.getByRole('region', { name: 'Today at a glance' });
     expect(within(summary).getByRole('heading', { level: 3, name: 'My tasks' })).toBeInTheDocument();
     expect(within(summary).getByRole('heading', { level: 3, name: 'My requests' })).toBeInTheDocument();
     expect(within(summary).getByRole('heading', { level: 3, name: 'Active projects' })).toBeInTheDocument();

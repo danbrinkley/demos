@@ -1,4 +1,5 @@
 import { ChevronDown } from 'lucide-react';
+import jordanProfile from '../../assets/jordan-profile.png';
 import { useHeaderPopover } from './useHeaderPopover';
 import './UserMenu.css';
 import './HeaderPopover.css';
@@ -6,10 +7,6 @@ import './HeaderPopover.css';
 interface UserMenuProps {
   firstName: string;
   role: string;
-}
-
-function initialsFor(firstName: string): string {
-  return firstName.slice(0, 1).toUpperCase();
 }
 
 export function UserMenu({ firstName, role }: UserMenuProps) {
@@ -25,7 +22,7 @@ export function UserMenu({ firstName, role }: UserMenuProps) {
         onClick={() => setIsOpen((open) => !open)}
       >
         <span className="hv-user-menu__avatar" aria-hidden="true">
-          {initialsFor(firstName)}
+          <img src={jordanProfile} alt="" />
         </span>
         <span className="hv-visually-hidden">Account menu for {firstName}</span>
         <ChevronDown aria-hidden="true" className="hv-user-menu__chevron" />

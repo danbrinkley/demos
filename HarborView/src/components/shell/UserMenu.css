@@ -22,10 +22,18 @@
   width: 2.25rem;
   height: 2.25rem;
   border-radius: 50%;
-  background: var(--hv-navy);
+  overflow: hidden;
+  background: var(--hv-bg-sunken);
   color: var(--hv-text-on-navy);
   font-weight: 600;
   font-size: var(--hv-text-sm);
+}
+
+.hv-user-menu__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 28%;
 }
 
 .hv-user-menu__chevron {

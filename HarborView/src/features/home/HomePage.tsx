@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import { OrgAlertBanner } from '../../components/shell/OrgAlertBanner';
 import { DEMO_TODAY } from '../../data/demoDate';
 import { selectMyTasks, selectThisWeek } from '../../data/selectors';
 import { useWorkspaceData } from '../../state/WorkspaceDataContext';
@@ -48,26 +47,27 @@ export function HomePage() {
 
   return (
     <div className="hv-home">
-      <OrgAlertBanner alert={alert} />
+      <Greeting firstName={currentUser.firstName} today={DEMO_TODAY} alert={alert}>
+        <WorkSummarySection tasks={myTasks} requests={requests} projects={projects} />
+      </Greeting>
 
-      <Greeting firstName={currentUser.firstName} today={DEMO_TODAY} />
+      <div className="hv-home__content">
+        <ActiveProjectsSection projects={projects} />
 
-      <WorkSummarySection tasks={myTasks} requests={requests} projects={projects} />
-
-      <div className="hv-home__dashboard-grid">
-        <div className="hv-home__work-area">
-          <AttentionListSection
-            items={myTasks}
-            expandedIds={expandedItemIds}
-            onToggle={toggleItemExpanded}
-            onComplete={completeWorkItem}
-          />
-          <MyRequestsSection requests={requests} />
-          <ActiveProjectsSection projects={projects} />
+        <div className="hv-home__dashboard-grid">
+          <div className="hv-home__work-area">
+            <AttentionListSection
+              items={myTasks}
+              expandedIds={expandedItemIds}
+              onToggle={toggleItemExpanded}
+              onComplete={completeWorkItem}
+            />
+            <MyRequestsSection requests={requests} />
+          </div>
+          <aside className="hv-home__upcoming" aria-label="Upcoming commitments">
+            <ThisWeekSection commitments={thisWeek} />
+          </aside>
         </div>
-        <aside className="hv-home__upcoming" aria-label="Upcoming commitments">
-          <ThisWeekSection commitments={thisWeek} />
-        </aside>
       </div>
     </div>
   );

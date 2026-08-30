@@ -20,13 +20,7 @@ export function WorkSummarySection({ tasks, requests, projects }: WorkSummarySec
 
   return (
     <section className="hv-work-summary" aria-labelledby="hv-work-summary-heading">
-      <div className="hv-work-summary__heading-row">
-        <div>
-          <p className="hv-section-eyebrow">Your workspace</p>
-          <h2 id="hv-work-summary-heading" className="hv-section-heading">A clear view of your work</h2>
-        </div>
-        <p>See what you own, what you are waiting on, and what is moving.</p>
-      </div>
+      <h2 id="hv-work-summary-heading" className="hv-work-summary__label">Today at a glance</h2>
       <div className="hv-work-summary__grid">
         {summaries.map(({ label, value, detail, icon: Icon }) => (
           <article className="hv-summary-card" key={label}>
