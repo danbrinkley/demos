@@ -99,6 +99,7 @@ export interface Resource {
   id: string;
   title: string;
   category: string;
+  href?: string;
 }
 
 export interface CurrentUser {

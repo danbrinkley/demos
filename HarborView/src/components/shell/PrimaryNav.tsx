@@ -14,7 +14,7 @@ interface NavItem {
 const NAV_ITEMS: NavItem[] = [
   { label: 'Home', to: '/' },
   { label: 'My Work', to: '/my-work' },
-  { label: 'Resources', to: '/resources' },
+  { label: 'Knowledge', to: '/knowledge' },
   { label: 'News', to: '/news' },
 ];
 

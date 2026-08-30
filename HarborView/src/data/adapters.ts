@@ -1,3 +1,5 @@
+import { knowledgeResources } from './knowledge';
+import type { KnowledgeResource } from './knowledge';
 import {
   orgAlert,
   sampleCommitments,
@@ -56,5 +58,9 @@ export function getStaffDirectory(): StaffMember[] {
 }
 
 export function getResourceCatalog(): Resource[] {
-  return sampleResources;
+  return [...knowledgeResources, ...sampleResources];
+}
+
+export function getKnowledgeCatalog(): KnowledgeResource[] {
+  return knowledgeResources;
 }

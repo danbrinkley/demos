@@ -49,15 +49,15 @@ describe('Workspace Home', () => {
     expect(screen.getByText('Alvarez out of office')).toBeInTheDocument();
   });
 
-  it('marks Home as the active nav item and navigates to the Resources and News placeholders', async () => {
+  it('marks Home as active and navigates to Knowledge and News', async () => {
     const user = userEvent.setup();
     renderApp();
 
     const nav = screen.getByRole('navigation', { name: 'Primary' });
     expect(within(nav).getByRole('link', { name: 'Home' })).toHaveAttribute('aria-current', 'page');
 
-    await user.click(within(nav).getByRole('link', { name: 'Resources' }));
-    expect(screen.getByRole('heading', { name: 'Resources' })).toBeInTheDocument();
+    await user.click(within(nav).getByRole('link', { name: 'Knowledge' }));
+    expect(screen.getByRole('heading', { name: 'Knowledge' })).toBeInTheDocument();
 
     await user.click(within(nav).getByRole('link', { name: 'News' }));
     expect(screen.getByRole('heading', { name: 'News' })).toBeInTheDocument();

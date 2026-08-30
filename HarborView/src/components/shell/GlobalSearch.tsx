@@ -3,6 +3,7 @@ import { useId, useRef, useState } from 'react';
 import type { KeyboardEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { searchWorkspace } from '../../data/selectors';
+import { knowledgeHref } from '../../data/knowledge';
 import type { SearchResult, SearchResultType } from '../../data/types';
 import { useWorkspaceData } from '../../state/WorkspaceDataContext';
 import './GlobalSearch.css';
@@ -48,7 +49,8 @@ export function GlobalSearch() {
       setPlaceholderMessage('Staff profiles are coming soon to Harbor View.');
       return;
     }
-    setPlaceholderMessage('The Resources library opens on the Resources page.');
+    const resource = resources.find((item) => item.id === result.id);
+    if (resource) { navigate(knowledgeHref(resource)); reset(); }
   }
 
   function handleKeyDown(event: KeyboardEvent<HTMLInputElement>) {

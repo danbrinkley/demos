@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ArrowUpRight, CheckCircle2, ChevronRight, Clock3, CreditCard, FileText, Inbox, X } from 'lucide-react';
 import { entryArea, entryType, filterQueue, queueDate, selectQueue } from '../../data/myWork';
 import type { QueueEntry, WorkSort, WorkTab } from '../../data/myWork';
@@ -18,7 +19,8 @@ function EntryIcon({ entry }: { entry: QueueEntry }) {
 
 export function MyWorkPage() {
   const { workItems, requests, completeWorkItem } = useWorkspaceData();
-  const [tab, setTab] = useState<WorkTab>('needs-me');
+  const [searchParams] = useSearchParams();
+  const [tab, setTab] = useState<WorkTab>(() => searchParams.get('tab') === 'waiting' ? 'waiting' : 'needs-me');
   const [type, setType] = useState('');
   const [area, setArea] = useState('');
   const [sort, setSort] = useState<WorkSort>('due');

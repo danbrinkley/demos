@@ -29,7 +29,7 @@ export function WorkspaceFooter() {
         <nav className="hv-footer__group hv-footer__group--essentials" aria-label="Employee essentials">
           <h2>Employee essentials</h2>
           {essentials.map(({ label, icon: Icon, hash }) => (
-            <NavLink to={`/resources#${hash}`} key={label}>
+            <NavLink to={hash === 'expenses' ? '/knowledge/expense-reporting' : `/resources#${hash}`} key={label}>
               <span className="hv-footer__icon-well" aria-hidden="true"><Icon /></span>
               {label}
             </NavLink>
