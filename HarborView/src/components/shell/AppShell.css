@@ -30,40 +30,6 @@
   flex-shrink: 0;
 }
 
-.hv-harbor-logo {
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-  white-space: nowrap;
-}
-
-.hv-harbor-logo__words {
-  display: flex;
-  flex-direction: column;
-  gap: 0.08rem;
-}
-
-.hv-harbor-logo__words strong {
-  font-size: 1rem;
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--hv-navy);
-}
-
-.hv-harbor-logo__words small {
-  font-size: 0.52rem;
-  color: var(--hv-teal-dark);
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.hv-harbor-logo--inverse .hv-harbor-logo__words strong,
-.hv-harbor-logo--inverse .hv-harbor-logo__words small { color: var(--hv-text-on-navy); }
-
 .hv-shell__nav--desktop {
   flex-shrink: 0;
 }
@@ -135,8 +101,6 @@
   .hv-shell__header-inner {
     gap: var(--hv-space-3);
   }
-
-  .hv-harbor-logo__words small { display: none; }
 
   .hv-shell__search {
     display: none;

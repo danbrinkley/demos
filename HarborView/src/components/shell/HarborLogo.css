@@ -1,0 +1,50 @@
+/* One lockup for both surfaces. Logo colors are intentionally independent of
+   the UI's semantic status palette and muted coral action colors. */
+.hv-harbor-logo {
+  --hv-logo-ink: #082b50;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.hv-harbor-logo .hv-brand__mark {
+  display: block;
+  width: 48px;
+  height: 36px;
+  flex-shrink: 0;
+}
+
+.hv-harbor-logo__words {
+  display: flex;
+  flex-direction: column;
+  gap: 0.17rem;
+  color: var(--hv-logo-ink);
+  text-transform: uppercase;
+}
+
+.hv-harbor-logo__words strong {
+  font-family: var(--hv-font-body);
+  font-size: 1.3rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.105em;
+}
+
+.hv-harbor-logo__words small {
+  font-family: var(--hv-font-body);
+  font-size: 0.47rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.055em;
+}
+
+.hv-harbor-logo--inverse { --hv-logo-ink: #ffffff; }
+
+@media (max-width: 480px) {
+  .hv-harbor-logo { gap: 0.3rem; }
+  .hv-harbor-logo .hv-brand__mark { width: 40px; height: 30px; }
+  .hv-harbor-logo__words strong { font-size: 1.1rem; }
+  .hv-harbor-logo__words small { font-size: 0.4rem; }
+}
