@@ -13,7 +13,7 @@ export function WorkSummarySection({ tasks, requests, projects }: WorkSummarySec
   const projectsNeedingAttention = projects.filter((project) => project.health === 'needs_attention').length;
 
   const summaries = [
-    { label: 'My tasks', value: tasks.length, detail: `${tasks.filter((task) => task.requiresAction).length} still open`, icon: CheckSquare2 },
+    { label: 'My tasks', value: tasks.filter((task) => task.requiresAction && !task.completed).length, detail: `${tasks.filter((task) => task.requiresAction && !task.completed).length} still open`, icon: CheckSquare2 },
     { label: 'My requests', value: requests.length, detail: `${pendingRequests} pending`, icon: FileClock },
     { label: 'Active projects', value: projects.length, detail: `${projectsNeedingAttention} needs attention`, icon: FolderKanban },
   ];

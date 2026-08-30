@@ -148,7 +148,7 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 901px) {
   .hv-shell__nav--mobile {
     display: none !important;
   }

@@ -71,6 +71,7 @@ export function WorkspaceDataProvider({ children }: { children: ReactNode }) {
                 ...item,
                 completed: true,
                 requiresAction: false,
+                status: item.kind === 'expense' && item.status === 'pending_approval' ? 'approved' : item.status,
                 statusLabel: item.completedStatusLabel ?? item.statusLabel,
               }
             : item,

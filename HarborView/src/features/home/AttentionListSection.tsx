@@ -21,7 +21,7 @@ export function AttentionListSection({ items, expandedIds, onToggle, onComplete 
             My tasks
           </h2>
         </div>
-        <span className="hv-panel-heading__count">{items.length} open</span>
+        <span className="hv-panel-heading__count">{items.filter((item) => item.requiresAction && !item.completed).length} open</span>
       </div>
 
       {items.length === 0 ? (
